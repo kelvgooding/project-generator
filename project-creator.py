@@ -176,13 +176,14 @@ def web_application():
 
     # Create several directories.
 
+    os.mkdir('build')
+    os.mkdir('build/static')
+    os.mkdir('build/static/css')
+    os.mkdir('build/static/images')
+    os.mkdir('build/static/fonts')
+    os.mkdir('build/templates')
     os.mkdir('designs')
     os.mkdir('docs')
-    os.mkdir('static')
-    os.mkdir('static/css')
-    os.mkdir('static/images')
-    os.mkdir('static/fonts')
-    os.mkdir('templates')
 
     # Creating .html files
 
@@ -236,6 +237,7 @@ def web_application():
         file.write('web: gunicorn app:app')
 
     with open('app.py', 'w') as file:
+        file.write('#!/usr/bin/env python3\n\n')
         file.write('from flask import Flask, render_template, request, flash\n\n')
         file.write('app = Flask(__name__)\n\n\n')
         file.write('@app.route("/")\n')
@@ -248,8 +250,11 @@ def web_application():
 
     # Move Files
 
-    shutil.move('index.html', 'templates')
-    shutil.move('styles.css', 'static/css')
+    shutil.move('index.html', 'build/templates')
+    shutil.move('styles.css', 'build/static/css')
+    shutil.move('app.py', 'build.')
+    shutil.move('Procfile', 'build.')
+    shutil.move('requirements.txt', 'build.')
 
     messagebox.showinfo("Success!", "Your Website Application project has now been created.")
 
