@@ -1,10 +1,10 @@
-# Project Creator - UI
+# Project Creator
 
-**What is Project Creator - UI?**
+**What is Project Creator?**
 
-Project Creator is a Desktop Application build on Tkinter framework. The purpose is to automatically create the directories structure and files needed for a project from the options available:
+Project Creator is a Automation Script. The purpose is to automatically create the directories structure and files needed for a project from the options available:
 
-![image](https://user-images.githubusercontent.com/82043281/222166851-0d901011-7b42-4787-9507-df5fa734ed20.png)
+![image](https://user-images.githubusercontent.com/82043281/222199494-e60e42d0-196e-4a32-b11e-0633c035becc.png)
 
 **Features:**
 
@@ -65,4 +65,3 @@ docs/<br>
 **Tech Stack:**
 
 - Python
-- Tkinter
