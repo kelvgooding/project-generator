@@ -42,9 +42,8 @@ build/<br>
 │  ├─ images/<br>
 ├─ templates/<br>
 │  ├─ index.html<br>
-designs/
-docs/
-
+designs/<br>
+docs/<br>
 
 <b>Web Application - Directory Structure:</b>
 
