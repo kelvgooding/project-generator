@@ -1,52 +1,35 @@
 # Modules
 
-from tkinter import *
 import os
 from datetime import datetime
 import shutil
-from tkinter import messagebox
-
-# Tkinter Variables
-
-root = Tk()
-root.geometry("250x310")
-root.title("Project Creator")
-root.configure(bg='#5A5A5A')
-root.columnconfigure(0, weight=1)
-root.resizable(False, False)
 
 # Variables
 
 dt = datetime.today().strftime("%Y%m%d-%H%M%S")
 user = os.getlogin()
 path = fr"C:/Users/{user}/desktop/"
-dir1 = fr"automation-script-{dt}"
-dir2 = fr"desktop-application-{dt}"
-dir3 = fr"static-website-{dt}"
-dir4 = fr"web-application-{dt}"
 
 def automation_scripts():
 
-    messagebox.showinfo("Loading..", "Please wait whilst your project is being generated..")
-
     # Create project directory
 
-    os.mkdir(os.path.join(path, dir1))
+    os.mkdir(os.path.join(path, f'automation-script-{dt}'))
 
     # Change directory
 
-    os.chdir(os.path.join(path, dir1))
+    os.chdir(os.path.join(path, f'automation-script-{dt}'))
 
     # Create sub-directories
 
     os.mkdir('build')
+    os.mkdir('build/db')
+    os.mkdir('build/scripts')
     os.mkdir('docs')
     os.mkdir('designs')
-    os.mkdir('db')
-    os.mkdir('scripts')
 
     # Create Virtual Environment
-
+    
     os.system(r'python -m venv venv')
 
     # Create files
@@ -60,27 +43,30 @@ def automation_scripts():
     with open("config.ini", "w", ) as file3:
         file3.write("[DEFAULT]")
 
-    messagebox.showinfo("Success!", "Your Automation Script project has now been created.")
+    # Move files
 
-    os.startfile(os.path.join(path, dir1))
+    shutil.move('script.py', 'build/')
+    shutil.move('requirements.txt', 'build/')
+    shutil.move('config.ini', 'build/')
+    shutil.move('venv', 'build/')
 
 def desktop_applications():
     # Create project directory
 
-    os.mkdir(os.path.join(path, dir2))
+    os.mkdir(os.path.join(path, f'desktop-application-{dt}'))
 
     # Change directory
 
-    os.chdir(os.path.join(path, dir2))
+    os.chdir(os.path.join(path, f'desktop-application-{dt}'))
 
     # Create sub-directories
 
     os.mkdir('build')
+    os.mkdir('build/db')
+    os.mkdir('build/scripts')
+    os.mkdir('build/ui')
     os.mkdir('docs')
     os.mkdir('designs')
-    os.mkdir('db')
-    os.mkdir('scripts')
-    os.mkdir('UI')
 
     # Create Virtual Environment
 
@@ -97,28 +83,33 @@ def desktop_applications():
     with open("config.ini", "w", ) as file3:
         file3.write("[DEFAULT]")
 
-    messagebox.showinfo("Success!", "Your Desktop Application project has now been created.")
+    # Move files
 
-    os.startfile(os.path.join(path, dir2))
+    shutil.move('script.py', 'build/')
+    shutil.move('requirements.txt', 'build/')
+    shutil.move('config.ini', 'build/')
+    shutil.move('venv', 'build/')
 
 def static_websites():
+
     # Create project directory
 
-    os.mkdir(os.path.join(path, dir3))
+    os.mkdir(os.path.join(path, f'static-website-{dt}'))
 
     # Change directory
 
-    os.chdir(os.path.join(path, dir3))
+    os.chdir(os.path.join(path, f'static-website-{dt}'))
 
-    # Create sub-directories
+    # Create several directories.
 
+    os.mkdir('build')
+    os.mkdir('build/static')
+    os.mkdir('build/static/css')
+    os.mkdir('build/static/images')
+    os.mkdir('build/static/fonts')
+    os.mkdir('build/templates')
     os.mkdir('designs')
     os.mkdir('docs')
-    os.mkdir('static')
-    os.mkdir('static/css')
-    os.mkdir('static/images')
-    os.mkdir('static/fonts')
-    os.mkdir('templates')
 
     # Creating .html files
 
@@ -154,21 +145,20 @@ def static_websites():
         file1.write("    text-align: center;\n")
         file1.write("}\n")
 
-    shutil.move('index.html', 'templates')
-    shutil.move('styles.css', 'static/css')
+    # Move Files
 
-    messagebox.showinfo("Success!", "Your Static Website project has now been created.")
-
-    os.startfile(os.path.join(path, dir3))
+    shutil.move('index.html', 'build/templates')
+    shutil.move('styles.css', 'build/static/css')
 
 def web_application():
+
     # Create project directory
 
-    os.mkdir(os.path.join(path, dir4))
+    os.mkdir(os.path.join(path, f'web-application-{dt}'))
 
     # Change directory
 
-    os.chdir(os.path.join(path, dir4))
+    os.chdir(os.path.join(path, f'web-application-{dt}'))
 
     # Install Flask via PIP
 
@@ -256,22 +246,46 @@ def web_application():
     shutil.move('Procfile', 'build.')
     shutil.move('requirements.txt', 'build.')
 
-    messagebox.showinfo("Success!", "Your Website Application project has now been created.")
+def menu():
 
-    os.startfile(os.path.join(path, dir4))
+    print('------| PROJECT CREATOR |------\n')
+    print("SELECT AN OPTION TO BEGIN PROJECT GENERATION:\n")
+    print("1 | AUTOMATION SCRIPTS")
+    print("2 | DESKTOP APPLICATIONS")
+    print("3 | STATIC WEBSITES")
+    print("4 | WEB APPLICATIONS")
 
-# Tkinter Widgets
+    choice = input("\nENTER YOUR OPTION: ")
 
-BTN1 = Button(text="Automation\nScripts", width='20', height='3', command=automation_scripts)
-BTN1.grid(column=0, row=0, padx=10, pady=10)
-
-BTN2 = Button(text="Desktop\nApplications", width='20', height='3', command=desktop_applications)
-BTN2.grid(column=0, row=1, padx=10, pady=10)
-
-BTN3 = Button(text="Static\nWebsites", width='20', height='3', command=static_websites)
-BTN3.grid(column=0, row=2, padx=10, pady=10)
-
-BTN4 = Button(text="Web\nApplications", width='20', height='3', command=web_application)
-BTN4.grid(column=0, row=3, padx=10, pady=10)
-
-root.mainloop()
+    if choice == "1":
+        print('\n----------------------------')
+        print("\nCREATING PROJECT - AUTOMATION SCRIPTS ..")
+        automation_scripts()
+        input("\nCOMPLETE! PRESS ANY KEY TO EXIT ..")
+        os.startfile(os.path.join(path, f'automation-script-{dt}'))
+        
+    elif choice == "2":
+        print('\n----------------------------')
+        print("\nCREATING PROJECT - DESKTOP APPLICATIONS ..")
+        desktop_applications()
+        input("\nCOMPLETE! PRESS ANY KEY TO EXIT ..")
+        os.startfile(os.path.join(path, f'desktop-application-{dt}'))
+        
+    elif choice == "3":
+        print('\n----------------------------')
+        print("\nCREATING PROJECT - STATIC WEBSITES ..")
+        static_websites()
+        input("\nCOMPLETE! PRESS ANY KEY TO EXIT ..")
+        os.startfile(os.path.join(path, f'static-website-{dt}'))
+        
+    elif choice == "4":
+        print('\n----------------------------')
+        print("\nCREATING PROJECT - WEB APPLICATIONS ..")
+        web_application()
+        input("\nCOMPLETE! PRESS ANY KEY TO EXIT ..")
+        os.startfile(os.path.join(path, f'web-application-{dt}'))
+        
+    else:
+        print("INVALID OPTION. PLEASE TRY AGAIN.")
+        menu()
+menu()
