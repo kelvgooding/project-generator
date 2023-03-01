@@ -8,7 +8,7 @@ Project Creator is a Desktop Application build on Tkinter framework. The purpose
 
 **Features:**
 
-Automation Script - Directory Structure
+<b>Automation Script - Directory Structure</b>
 
 build/<br>
 ├─ db/<br>
@@ -21,21 +21,21 @@ docs/<br>
 
 <b>Desktop Application - Directory Structure:</b>
 
-build/
-├─ db/
-├─ scripts/
-├─ ui/
-├─ config.ini
-├─ requirements.txt
-├─ script.py
-designs/
-docs/
+build/<br>
+├─ db/<br>
+├─ scripts/<br>
+├─ ui/<br>
+├─ config.ini<br>
+├─ requirements.txt<br>
+├─ script.py<br>
+designs/<br>
+docs/<br>
 
-Website - Directory Structure:
+<b>Website - Directory Structure:</b>
 
 N/A
 
-Web Application - Directory Structure:
+<b>Web Application - Directory Structure:</b>
 
 build/<br>
 ├─ app.py<br>
