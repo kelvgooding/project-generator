@@ -19,9 +19,17 @@ build/<br>
 designs/<br>
 docs/<br>
 
-Desktop Application - Directory Structure:
+<b>Desktop Application - Directory Structure:</b>
 
-N/A
+build/
+├─ db/
+├─ scripts/
+├─ ui/
+├─ config.ini
+├─ requirements.txt
+├─ script.py
+designs/
+docs/
 
 Website - Directory Structure:
 
