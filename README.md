@@ -37,8 +37,20 @@ N/A
 
 Web Application - Directory Structure:
 
-N/A
-
+build/<br>
+├─ app.py<br>
+├─ static/<br>
+│  ├─ css/<br>
+│  │  ├─ styles.css<br>
+│  ├─ db/<br>
+│  ├─ fonts/<br>
+│  ├─ images/<br>
+├─ templates/<br>
+│  ├─ index.html<br>
+├─ Procfile<br>
+├─ requirements.txt<br>
+designs/<br>
+docs/<br>
 
 **Tech Stack:**
 
