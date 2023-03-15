@@ -29,13 +29,13 @@ def automation_scripts():
     os.mkdir('designs')
 
     # Create Virtual Environment
-    
+
     os.system(r'python -m venv venv')
 
     # Create files
 
     with open("script.py", "w", ) as file1:
-        file1.write("")
+        file1.write('#!/usr/bin/env python3')
 
     with open("requirements.txt", "w", ) as file2:
         file2.write("")
@@ -75,7 +75,7 @@ def desktop_applications():
     # Create files
 
     with open("script.py", "w", ) as file1:
-        file1.write("")
+        file1.write('#!/usr/bin/env python3')
 
     with open("requirements.txt", "w", ) as file2:
         file2.write("")
@@ -263,28 +263,28 @@ def menu():
         automation_scripts()
         input("\nCOMPLETE! PRESS ANY KEY TO EXIT ..")
         os.startfile(os.path.join(path, f'automation-script-{dt}'))
-        
+
     elif choice == "2":
         print('\n----------------------------')
         print("\nCREATING PROJECT - DESKTOP APPLICATIONS ..")
         desktop_applications()
         input("\nCOMPLETE! PRESS ANY KEY TO EXIT ..")
         os.startfile(os.path.join(path, f'desktop-application-{dt}'))
-        
+
     elif choice == "3":
         print('\n----------------------------')
         print("\nCREATING PROJECT - STATIC WEBSITES ..")
         static_websites()
         input("\nCOMPLETE! PRESS ANY KEY TO EXIT ..")
         os.startfile(os.path.join(path, f'static-website-{dt}'))
-        
+
     elif choice == "4":
         print('\n----------------------------')
         print("\nCREATING PROJECT - WEB APPLICATIONS ..")
         web_application()
         input("\nCOMPLETE! PRESS ANY KEY TO EXIT ..")
         os.startfile(os.path.join(path, f'web-application-{dt}'))
-        
+
     else:
         print("INVALID OPTION. PLEASE TRY AGAIN.")
         menu()
