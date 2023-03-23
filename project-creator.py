@@ -1,3 +1,10 @@
+"""
+Author: Kelvin Gooding
+Created: 2023-03-23
+Updated: 2023-03-23
+Version: 1.1
+"""
+
 # Modules
 
 import os
@@ -7,6 +14,7 @@ import shutil
 # Variables
 
 dt = datetime.today().strftime("%Y%m%d-%H%M%S")
+dt2 = datetime.today().strftime("%Y-%m-%d")
 user = os.getlogin()
 path = fr"C:/Users/{user}/desktop/"
 
@@ -36,6 +44,20 @@ def automation_scripts():
 
     with open("script.py", "w", ) as file1:
         file1.write('#!/usr/bin/env python3')
+        file1.write('\n')
+        file1.write('\n"""')
+        file1.write('\nAuthor: Kelvin Gooding')
+        file1.write(f'\nCreated: {dt2}')
+        file1.write(f'\nUpdated: {dt2}')
+        file1.write('\nVersion: 1.0')
+        file1.write('\n"""')
+        file1.write('\n\n')
+        file1.write('# Modules')
+        file1.write('\n\n')
+        file1.write('# Variables')
+        file1.write('\n\n')
+        file1.write('# Script')
+        file1.write('\n')
 
     with open("requirements.txt", "w", ) as file2:
         file2.write("")
