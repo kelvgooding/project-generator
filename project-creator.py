@@ -1,8 +1,8 @@
 """
 Author: Kelvin Gooding
-Created: 2023-03-23
-Updated: 2023-03-23
-Version: 1.1
+Created: 2022-11-17
+Updated: 2023-03-24
+Version: 1.2
 """
 
 # Modules
@@ -13,10 +13,12 @@ import shutil
 
 # Variables
 
-dt = datetime.today().strftime("%Y%m%d-%H%M%S")
-dt2 = datetime.today().strftime("%Y-%m-%d")
+dt = datetime.today().strftime('%Y%m%d-%H%M%S')
+dt2 = datetime.today().strftime('%Y-%m-%d')
 user = os.getlogin()
-path = fr"C:/Users/{user}/desktop/"
+path = fr'C:/Users/{user}/desktop/'
+
+# Script
 
 def automation_scripts():
 
@@ -27,6 +29,60 @@ def automation_scripts():
     # Change directory
 
     os.chdir(os.path.join(path, f'automation-script-{dt}'))
+
+    # Create sub-directories
+
+    os.mkdir('build')
+    os.mkdir('build/db')
+    os.mkdir('build/scripts')
+    os.mkdir('docs')
+    os.mkdir('designs')
+
+    # Create Virtual Environment
+
+    os.system(r'python -m venv venv')
+
+    # Create files
+
+    with open("script.py", "w", ) as file1:
+        file1.write('#!/usr/bin/env python3')
+        file1.write('\n')
+        file1.write('\n"""')
+        file1.write('\nAuthor: Kelvin Gooding')
+        file1.write(f'\nCreated: {dt2}')
+        file1.write(f'\nUpdated: {dt2}')
+        file1.write('\nVersion: 1.0')
+        file1.write('\n"""')
+        file1.write('\n\n')
+        file1.write('# Modules')
+        file1.write('\n\n')
+        file1.write('# Variables')
+        file1.write('\n\n')
+        file1.write('# Script')
+        file1.write('\n')
+
+    with open("requirements.txt", "w", ) as file2:
+        file2.write("")
+
+    with open("config.ini", "w", ) as file3:
+        file3.write("[DEFAULT]")
+
+    # Move files
+
+    shutil.move('script.py', 'build/')
+    shutil.move('requirements.txt', 'build/')
+    shutil.move('config.ini', 'build/')
+    shutil.move('venv', 'build/')
+
+def interactive_scripts():
+
+    # Create project directory
+
+    os.mkdir(os.path.join(path, f'interactive-script-{dt}'))
+
+    # Change directory
+
+    os.chdir(os.path.join(path, f'interactive-script-{dt}'))
 
     # Create sub-directories
 
@@ -271,36 +327,44 @@ def web_application():
 def menu():
 
     print('------| PROJECT CREATOR |------\n')
-    print("SELECT AN OPTION TO BEGIN PROJECT GENERATION:\n")
-    print("1 | AUTOMATION SCRIPTS")
-    print("2 | DESKTOP APPLICATIONS")
-    print("3 | STATIC WEBSITES")
-    print("4 | WEB APPLICATIONS")
+    print('SELECT AN OPTION TO BEGIN PROJECT GENERATION:\n')
+    print('1 | AUTOMATION SCRIPTS')
+    print('2 | INTERACTIVE SCRIPTS')
+    print('3 | DESKTOP APPLICATIONS')
+    print('4 | STATIC WEBSITES')
+    print('5 | WEB APPLICATIONS')
 
     choice = input("\nENTER YOUR OPTION: ")
 
-    if choice == "1":
+    if choice == '1':
         print('\n----------------------------')
         print("\nCREATING PROJECT - AUTOMATION SCRIPTS ..")
         automation_scripts()
         input("\nCOMPLETE! PRESS ANY KEY TO EXIT ..")
         os.startfile(os.path.join(path, f'automation-script-{dt}'))
 
-    elif choice == "2":
+    elif choice == '2':
+        print('\n----------------------------')
+        print("\nCREATING PROJECT - INTERACTIVE SCRIPTS ..")
+        desktop_applications()
+        input("\nCOMPLETE! PRESS ANY KEY TO EXIT ..")
+        os.startfile(os.path.join(path, f'interactive-script-{dt}'))
+
+    elif choice == '3':
         print('\n----------------------------')
         print("\nCREATING PROJECT - DESKTOP APPLICATIONS ..")
         desktop_applications()
         input("\nCOMPLETE! PRESS ANY KEY TO EXIT ..")
         os.startfile(os.path.join(path, f'desktop-application-{dt}'))
 
-    elif choice == "3":
+    elif choice == '4':
         print('\n----------------------------')
         print("\nCREATING PROJECT - STATIC WEBSITES ..")
         static_websites()
         input("\nCOMPLETE! PRESS ANY KEY TO EXIT ..")
         os.startfile(os.path.join(path, f'static-website-{dt}'))
 
-    elif choice == "4":
+    elif choice == '5':
         print('\n----------------------------')
         print("\nCREATING PROJECT - WEB APPLICATIONS ..")
         web_application()
