@@ -4,11 +4,23 @@
 
 Project Creator is a Automation Script. The purpose is to automatically create the directories structure and files needed for a project from the options available:
 
-![image](https://user-images.githubusercontent.com/82043281/222199494-e60e42d0-196e-4a32-b11e-0633c035becc.png)
+![image](https://user-images.githubusercontent.com/82043281/227526623-e9beae7c-d755-41db-97fb-6ed72a16132f.png)
 
 **Features:**
 
 <b>Automation Script - Directory Structure</b>
+
+build/<br>
+├─ db/<br>
+├─ scripts/<br>
+├─ config.ini<br>
+├─ requirements.txt<br>
+├─ script.py<br>
+designs/<br>
+docs/<br>
+
+
+<b>Interactive Script - Directory Structure</b>
 
 build/<br>
 ├─ db/<br>
