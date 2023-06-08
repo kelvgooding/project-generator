@@ -1,8 +1,8 @@
 """
 Author: Kelvin Gooding
 Created: 2022-11-17
-Updated: 2023-03-24
-Version: 1.2
+Updated: 2023-06-08
+Version: 1.3
 """
 
 # Modules
@@ -20,7 +20,7 @@ path = fr'C:/Users/{user}/desktop/'
 
 # Script
 
-def automation_scripts():
+def scripts_automation():
 
     # Create project directory
 
@@ -74,7 +74,7 @@ def automation_scripts():
     shutil.move('config.ini', 'build/')
     shutil.move('venv', 'build/')
 
-def interactive_scripts():
+def scripts_interactive():
 
     # Create project directory
 
@@ -128,14 +128,14 @@ def interactive_scripts():
     shutil.move('config.ini', 'build/')
     shutil.move('venv', 'build/')
 
-def desktop_applications():
+def desktop_app():
     # Create project directory
 
-    os.mkdir(os.path.join(path, f'desktop-application-{dt}'))
+    os.mkdir(os.path.join(path, f'desktop-app-{dt}'))
 
     # Change directory
 
-    os.chdir(os.path.join(path, f'desktop-application-{dt}'))
+    os.chdir(os.path.join(path, f'desktop-app-{dt}'))
 
     # Create sub-directories
 
@@ -167,9 +167,6 @@ def desktop_applications():
     shutil.move('requirements.txt', 'build/')
     shutil.move('config.ini', 'build/')
     shutil.move('venv', 'build/')
-
-def static_websites():
-
     # Create project directory
 
     os.mkdir(os.path.join(path, f'static-website-{dt}'))
@@ -228,15 +225,15 @@ def static_websites():
     shutil.move('index.html', 'build/templates')
     shutil.move('styles.css', 'build/static/css')
 
-def web_application():
+def web_app():
 
     # Create project directory
 
-    os.mkdir(os.path.join(path, f'web-application-{dt}'))
+    os.mkdir(os.path.join(path, f'web-app-{dt}'))
 
     # Change directory
 
-    os.chdir(os.path.join(path, f'web-application-{dt}'))
+    os.chdir(os.path.join(path, f'web-app-{dt}'))
 
     # Install Flask via PIP
 
@@ -328,48 +325,40 @@ def menu():
 
     print('------| PROJECT CREATOR |------\n')
     print('SELECT AN OPTION TO BEGIN PROJECT GENERATION:\n')
-    print('1 | AUTOMATION SCRIPTS')
-    print('2 | INTERACTIVE SCRIPTS')
-    print('3 | DESKTOP APPLICATIONS')
-    print('4 | STATIC WEBSITES')
-    print('5 | WEB APPLICATIONS')
+    print('1 | SCRIPTS - AUTOMATION')
+    print('2 | SCRIPTS - INTERACTIVE')
+    print('3 | DESKTOP APP')
+    print('4 | WEB APP')
 
     choice = input("\nENTER YOUR OPTION: ")
 
     if choice == '1':
         print('\n----------------------------')
-        print("\nCREATING PROJECT - AUTOMATION SCRIPTS ..")
-        automation_scripts()
+        print("\nCREATING PROJECT - SCRIPTS - AUTOMATION ..")
+        scripts_automation()
         input("\nCOMPLETE! PRESS ANY KEY TO EXIT ..")
         os.startfile(os.path.join(path, f'automation-script-{dt}'))
 
     elif choice == '2':
         print('\n----------------------------')
-        print("\nCREATING PROJECT - INTERACTIVE SCRIPTS ..")
-        desktop_applications()
+        print("\nCREATING PROJECT - SCRIPTS - INTERACTIVE ..")
+        scripts_interactive()
         input("\nCOMPLETE! PRESS ANY KEY TO EXIT ..")
         os.startfile(os.path.join(path, f'interactive-script-{dt}'))
 
     elif choice == '3':
         print('\n----------------------------')
-        print("\nCREATING PROJECT - DESKTOP APPLICATIONS ..")
-        desktop_applications()
+        print("\nCREATING PROJECT - DESKTOP APP ..")
+        desktop_app()
         input("\nCOMPLETE! PRESS ANY KEY TO EXIT ..")
-        os.startfile(os.path.join(path, f'desktop-application-{dt}'))
+        os.startfile(os.path.join(path, f'desktop-app-{dt}'))
 
     elif choice == '4':
         print('\n----------------------------')
-        print("\nCREATING PROJECT - STATIC WEBSITES ..")
-        static_websites()
+        print("\nCREATING PROJECT - WEB APP ..")
+        web_app()
         input("\nCOMPLETE! PRESS ANY KEY TO EXIT ..")
-        os.startfile(os.path.join(path, f'static-website-{dt}'))
-
-    elif choice == '5':
-        print('\n----------------------------')
-        print("\nCREATING PROJECT - WEB APPLICATIONS ..")
-        web_application()
-        input("\nCOMPLETE! PRESS ANY KEY TO EXIT ..")
-        os.startfile(os.path.join(path, f'web-application-{dt}'))
+        os.startfile(os.path.join(path, f'web-app-{dt}'))
 
     else:
         print("INVALID OPTION. PLEASE TRY AGAIN.")
