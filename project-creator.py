@@ -1,8 +1,8 @@
 """
 Author: Kelvin Gooding
 Created: 2022-11-17
-Updated: 2023-06-08
-Version: 1.3
+Updated: 2023-06-09
+Version: 1.4
 """
 
 # Modules
@@ -64,14 +64,14 @@ def scripts_automation():
     with open("requirements.txt", "w", ) as file2:
         file2.write("")
 
-    with open("config.ini", "w", ) as file3:
-        file3.write("[DEFAULT]")
+    with open('auth.py', 'w') as file3:
+        file3.write('auth = {\n    "username": "",\n    "password": ""\n}')
 
     # Move files
 
     shutil.move('script.py', 'build/')
+    shutil.move('auth.py', 'build/')
     shutil.move('requirements.txt', 'build/')
-    shutil.move('config.ini', 'build/')
     shutil.move('venv', 'build/')
 
 def scripts_interactive():
@@ -118,12 +118,13 @@ def scripts_interactive():
     with open("requirements.txt", "w", ) as file2:
         file2.write("")
 
-    with open("config.ini", "w", ) as file3:
-        file3.write("[DEFAULT]")
+    with open('auth.py', 'w') as file3:
+        file3.write('auth = {\n    "username": "",\n    "password": ""\n}')
 
     # Move files
 
     shutil.move('script.py', 'build/')
+    shutil.move('auth.py', 'build/')
     shutil.move('requirements.txt', 'build/')
     shutil.move('config.ini', 'build/')
     shutil.move('venv', 'build/')
@@ -158,15 +159,17 @@ def desktop_app():
     with open("requirements.txt", "w", ) as file2:
         file2.write("")
 
-    with open("config.ini", "w", ) as file3:
-        file3.write("[DEFAULT]")
+    with open('auth.py', 'w') as file3:
+        file3.write('auth = {\n    "username": "",\n    "password": ""\n}')
 
     # Move files
 
     shutil.move('script.py', 'build/')
+    shutil.move('auth.py', 'build/')
     shutil.move('requirements.txt', 'build/')
     shutil.move('config.ini', 'build/')
     shutil.move('venv', 'build/')
+
     # Create project directory
 
     os.mkdir(os.path.join(path, f'static-website-{dt}'))
@@ -315,9 +318,15 @@ def web_app():
 
     # Move Files
 
+    with open('auth.py', 'w') as file3:
+        file3.write('auth = {\n    "username": "",\n    "password": ""\n}')
+
+    # Move files
+
     shutil.move('index.html', 'build/templates')
     shutil.move('styles.css', 'build/static/css')
     shutil.move('app.py', 'build.')
+    shutil.move('auth.py', 'build/')
     shutil.move('Procfile', 'build.')
     shutil.move('requirements.txt', 'build.')
 
