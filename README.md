@@ -16,6 +16,7 @@ build/<br>
 ├─ config.ini<br>
 ├─ requirements.txt<br>
 ├─ script.py<br>
+├─ auth.py<br>
 designs/<br>
 docs/<br>
 
@@ -28,6 +29,7 @@ build/<br>
 ├─ config.ini<br>
 ├─ requirements.txt<br>
 ├─ script.py<br>
+├─ auth.py<br>
 designs/<br>
 docs/<br>
 
@@ -40,6 +42,7 @@ build/<br>
 ├─ config.ini<br>
 ├─ requirements.txt<br>
 ├─ script.py<br>
+├─ auth.py<br>
 designs/<br>
 docs/<br>
 
@@ -47,6 +50,7 @@ docs/<br>
 
 build/<br>
 ├─ app.py<br>
+├─ auth.py<br>
 ├─ static/<br>
 │  ├─ css/<br>
 │  │  ├─ styles.css<br>
