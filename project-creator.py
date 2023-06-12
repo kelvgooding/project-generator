@@ -1,8 +1,8 @@
 """
 Author: Kelvin Gooding
 Created: 2022-11-17
-Updated: 2023-06-09
-Version: 1.4
+Updated: 2023-06-11
+Version: 1.6
 """
 
 # Modules
@@ -65,7 +65,12 @@ def scripts_automation():
         file2.write("")
 
     with open('auth.py', 'w') as file3:
-        file3.write('auth = {\n    "username": "",\n    "password": ""\n}')
+        file3.write('user_auth = {\n    "username": "",\n    "password": ""\n}')
+        file3.write('\n\n')
+        file3.write('dir_path = {\n    "path": ""\n}')
+        file3.write('\n\n')
+        file3.write('base_url = {\n    "url": ""\n}')
+
 
     # Move files
 
@@ -119,7 +124,11 @@ def scripts_interactive():
         file2.write("")
 
     with open('auth.py', 'w') as file3:
-        file3.write('auth = {\n    "username": "",\n    "password": ""\n}')
+        file3.write('user_auth = {\n    "username": "",\n    "password": ""\n}')
+        file3.write('\n\n')
+        file3.write('dir_path = {\n    "path": ""\n}')
+        file3.write('\n\n')
+        file3.write('base_url = {\n    "url": ""\n}')
 
     # Move files
 
@@ -160,7 +169,11 @@ def desktop_app():
         file2.write("")
 
     with open('auth.py', 'w') as file3:
-        file3.write('auth = {\n    "username": "",\n    "password": ""\n}')
+        file3.write('user_auth = {\n    "username": "",\n    "password": ""\n}')
+        file3.write('\n\n')
+        file3.write('dir_path = {\n    "path": ""\n}')
+        file3.write('\n\n')
+        file3.write('base_url = {\n    "url": ""\n}')
 
     # Move files
 
@@ -319,7 +332,11 @@ def web_app():
     # Move Files
 
     with open('auth.py', 'w') as file3:
-        file3.write('auth = {\n    "username": "",\n    "password": ""\n}')
+        file3.write('user_auth = {\n    "username": "",\n    "password": ""\n}')
+        file3.write('\n\n')
+        file3.write('dir_path = {\n    "path": ""\n}')
+        file3.write('\n\n')
+        file3.write('base_url = {\n    "url": ""\n}')
 
     # Move files
 
