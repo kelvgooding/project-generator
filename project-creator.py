@@ -1,8 +1,8 @@
 """
 Author: Kelvin Gooding
 Created: 2022-11-17
-Updated: 2023-06-11
-Version: 1.6
+Updated: 2023-06-30
+Version: 1.7
 """
 
 # Modules
@@ -260,7 +260,9 @@ def web_app():
     os.mkdir('build')
     os.mkdir('build/static')
     os.mkdir('build/static/css')
-    os.mkdir('build/static/images')
+    os.mkdir('build/static/img')
+    os.mkdir('build/static/js')
+    os.mkdir('build/static/db')
     os.mkdir('build/static/fonts')
     os.mkdir('build/templates')
     os.mkdir('designs')
