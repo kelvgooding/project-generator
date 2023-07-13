@@ -1,8 +1,8 @@
 """
 Author: Kelvin Gooding
 Created: 2022-11-17
-Updated: 2023-06-30
-Version: 1.7
+Updated: 2023-07-13
+Version: 1.8
 """
 
 # Modules
@@ -262,7 +262,6 @@ def web_app():
     os.mkdir('build/static/css')
     os.mkdir('build/static/img')
     os.mkdir('build/static/js')
-    os.mkdir('build/static/db')
     os.mkdir('build/static/fonts')
     os.mkdir('build/templates')
     os.mkdir('designs')
@@ -316,9 +315,6 @@ def web_app():
         file.write('Werkzeug==2.2.2\n')
         file.write('zipp==3.8.1\n')
 
-    with open('Procfile', 'w') as file:
-        file.write('web: gunicorn app:app')
-
     with open('app.py', 'w') as file:
         file.write('#!/usr/bin/env python3\n\n')
         file.write('from flask import Flask, render_template, request, flash\n\n')
@@ -346,7 +342,6 @@ def web_app():
     shutil.move('styles.css', 'build/static/css')
     shutil.move('app.py', 'build.')
     shutil.move('auth.py', 'build/')
-    shutil.move('Procfile', 'build.')
     shutil.move('requirements.txt', 'build.')
 
 def menu():
