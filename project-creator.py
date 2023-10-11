@@ -1,8 +1,8 @@
 """
 Author: Kelvin Gooding
 Created: 2022-11-17
-Updated: 2023-07-13
-Version: 1.8
+Updated: 2023-10-11
+Version: 1.9
 """
 
 # Modules
@@ -15,7 +15,7 @@ import shutil
 
 dt = datetime.today().strftime('%Y%m%d-%H%M%S')
 dt2 = datetime.today().strftime('%Y-%m-%d')
-user = os.getlogin()
+user = os.path.split(os.path.expanduser("~"))[-1]
 path = fr'C:/Users/{user}/desktop/'
 
 # Script
